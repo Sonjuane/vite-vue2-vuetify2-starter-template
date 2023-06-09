@@ -81,34 +81,30 @@
                                                     <tr
                                                         v-if="titleFR.length > 0"
                                                         style="box-sizing: border-box; text-align: left">
-                                                        <td>{{ titleFR }}</td>
+                                                        <td><span>{{ titleFR }} </span><span v-if="titleEN.length > 0">/ {{
+                                                                titleEN }}</span></td>
                                                     </tr>
-                                                    <tr
-                                                        v-if="titleEN.length > 0"
+                                                    <tr v-if="deptFR.length > 0" class="line-height-1"
                                                         style="box-sizing: border-box; text-align: left">
-                                                        <td>{{ titleEN }}</td>
+                                                        <td>{{ deptFR }}</td>
                                                     </tr>
+                                                    <tr v-if="deptEN.length > 0"
+                                                        style="box-sizing: border-box; text-align: left"
+                                                        class="line-height-1">
+                                                        <td>{{ deptEN }}</td>
+                                                    </tr>
+
                                                 </tbody>
                                             </table>
                                         </td>
                                     </tr>
                                     <tr id="contact-row" style="box-sizing: border-box">
                                         <td class="cell" id="it93y" style="box-sizing: border-box">
-                                            <table
-                                                width="100%"
-                                                style="
-                              box-sizing: border-box;
-                              padding: 0 0 0 0;
-                              width: 525px;
-                            ">
+                                            <table width="100%"
+                                                style="box-sizing: border-box; padding: 0 0 0 0; width: 525px;">
                                                 <tbody style="box-sizing: border-box">
                                                     <tr style="box-sizing: border-box">
-                                                        <td
-                                                            class="cell"
-                                                            style="
-                                    vertical-align: top;
-                                    box-sizing: border-box;
-                                    text-align: left;
+                                                        <td class="cell" style="vertical-align: top; box-sizing: border-box; text-align: left;
                                     font-size: 14px;
                                     width: 45%;
                                   ">
@@ -116,19 +112,13 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td
-                                                                            style="
-                                            box-sizing: border-box;
-                                            text-align: left;
-                                          ">
+                                                                            style="box-sizing: border-box;text-align: left;">
                                                                             {{ email }}
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td
-                                                                            style="
-                                            box-sizing: border-box;
-                                            text-align: left;
-                                          ">
+                                                                            style="box-sizing: border-box;text-align: left;">
                                                                             {{ phone.office }}
                                                                         </td>
                                                                     </tr>
@@ -138,15 +128,15 @@
                                         ">
                                                                         <td
                                                                             style="
-                                            box-sizing: border-box;
-                                            text-align: left;
+ box-sizing: border-box;
+ text-align: left;
                                           ">
                                                                             {{ formatedPhone }}
                                                                             <span
                                                                                 v-if="
-                                              phone.mobile &&
-                                              phone.mobile.length > 1
-                                            ">(mobile)</span>
+   phone.mobile &&
+   phone.mobile.length > 1
+ ">(mobile)</span>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -163,48 +153,21 @@
                                     width: 55%;
                                   ">
                                                             <div
-                                                                style="
-                                      box-sizing: border-box;
-                                      text-align: left;
-                                      width: 100%;
-                                    ">
+                                                                style="box-sizing: border-box; text-align: left; width: 100%;">
                                                                 <table>
                                                                     <tbody>
-                                                                        <tr v-if="deptFR.length > 0">
-                                                                            <td
-                                                                                style="
-                                              box-sizing: border-box;
-                                              text-align: left;
-                                            ">
-                                                                                {{ deptFR }}
-                                                                            </td>
+                                                                        <tr>
+                                                                            <td></td>
                                                                         </tr>
-                                                                        <tr v-if="deptEN.length > 0">
-                                                                            <td
-                                                                                style="
-                                              box-sizing: border-box;
-                                              text-align: left;
-                                            ">
-                                                                                {{ deptEN }}
-                                                                            </td>
-                                                                        </tr>
-
                                                                         <tr>
                                                                             <td
-                                                                                style="
-                                              box-sizing: border-box;
-                                              text-align: left;
-                                            ">
+                                                                                style="box-sizing: border-box;text-align: left;">
                                                                                 {{ address.street }}
                                                                             </td>
                                                                         </tr>
-
                                                                         <tr>
                                                                             <td
-                                                                                style="
-                                              box-sizing: border-box;
-                                              text-align: left;
-                                            ">
+                                                                                style="box-sizing: border-box;text-align: left;">
                                                                                 {{ address.city }}
                                                                                 {{ address.province }},
                                                                                 {{ address.postalCode }}
@@ -496,6 +459,10 @@ export default {
 .card-wrapper {
     -webkit-box-shadow: 3px 1px 25px -6px #000000;
     box-shadow: 3px 1px 25px -6px #000000;
+}
+
+.line-height-1 {
+    line-height: 1.2;
 }
 
 /* .divider {

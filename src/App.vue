@@ -34,7 +34,7 @@ export default {
   name: "EmailSignature",
   data() {
     return {
-      cardType: 'main'
+      cardType: 0
     }
   },
   components: {
